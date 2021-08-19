@@ -1,26 +1,22 @@
 import type { Component } from "solid-js";
+import { lazy } from "solid-js";
+import { RouteDefinition, useRoutes } from "solid-app-router";
 
-import logo from "./logo.svg";
-import styles from "./App.module.css";
+const routes: RouteDefinition[] = [
+  {
+    path: "/",
+    component: lazy(() => import("./pages/Index")),
+  },
+];
 
 const App: Component = () => {
+  const Routes = useRoutes(routes);
+
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Awesome Site</h1>
+      <Routes />
+    </>
   );
 };
 

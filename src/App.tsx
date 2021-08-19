@@ -7,6 +7,10 @@ const routes: RouteDefinition[] = [
     path: "/",
     component: lazy(() => import("./pages/Index")),
   },
+  {
+    path: "/users/:userId",
+    component: lazy(() => import("./pages/User")),
+  },
 ];
 
 const App: Component = () => {

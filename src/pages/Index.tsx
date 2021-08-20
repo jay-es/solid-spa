@@ -1,7 +1,7 @@
 import { Link } from "solid-app-router";
 import { Component, createResource, For } from "solid-js";
-import { fetchUsers } from "../fetch";
-import { User } from "../types";
+import { fetchUsers } from "~/fetch";
+import { User } from "~/types";
 import styles from "./Index.module.css";
 
 const UserInfo: Component<User> = (user) => (

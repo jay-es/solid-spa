@@ -9,3 +9,10 @@
 .box b {
   font-weight: 600;
 }
+
+.commentItem {
+  border-top: 1px solid #ddd;
+}
+.commentItem h4 span {
+  font-weight: 400;
+}

@@ -18,3 +18,6 @@ export const fetchUsers = (): Promise<User[]> =>
 
 export const fetchUserById = (userId: Id): Promise<User> =>
   fetch(`${BASE_URL}/users/${userId}`).then(toJson);
+
+export const fetchUserPosts = (userId: Id): Promise<Post[]> =>
+  fetch(`${BASE_URL}/users/${userId}/posts`).then(toJson);

@@ -7,7 +7,8 @@ import styles from "./Index.module.css";
 const UserInfo: Component<User> = (user) => (
   <li class={styles.listItem}>
     {user.id}: {user.name} ({user.username}),{" "}
-    <Link href={`/users/${user.id}`}>more info</Link>
+    <Link href={`/users/${user.id}`}>more info</Link>,{" "}
+    <Link href={`/users/${user.id}/posts`}>posts</Link>
   </li>
 );
 

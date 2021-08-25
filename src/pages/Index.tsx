@@ -17,9 +17,12 @@ const Page: Component = () => {
   const [users] = createResource(fetchUsers);
 
   return (
-    <ul>
-      <For each={users()}>{(item) => <UserInfo {...item} />}</For>
-    </ul>
+    <>
+      <ul>
+        <For each={users()}>{(item) => <UserInfo {...item} />}</For>
+      </ul>
+      <Link href={`/posts`}>all posts</Link>,{" "}
+    </>
   );
 };
 

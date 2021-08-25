@@ -1,23 +1,13 @@
-import { Link, useParams } from "solid-app-router";
-import { Component, createResource, For } from "solid-js";
+import { useParams } from "solid-app-router";
+import { Component, createResource } from "solid-js";
 import { fetchUserPosts } from "~/api/fetch";
-import styles from "./Index.module.css";
+import { PostList } from "~/components/PostList";
 
 const Page: Component = () => {
   const { userId } = useParams();
   const [posts] = createResource(userId, fetchUserPosts);
 
-  return (
-    <ul>
-      <For each={posts()}>
-        {(item) => (
-          <li>
-            <Link href={`/posts/${item.id}`}>{item.title}</Link>
-          </li>
-        )}
-      </For>
-    </ul>
-  );
+  return <PostList posts={posts()} />;
 };
 
 export default Page;

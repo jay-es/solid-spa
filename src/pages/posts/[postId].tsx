@@ -1,7 +1,7 @@
 import { useParams } from "solid-app-router";
 import { Component, createResource, For, Show } from "solid-js";
 import { fetchCommentsByPostId, fetchPostById } from "~/api/fetch";
-import styles from "./Index.module.css";
+import styles from "./[postId].module.css";
 
 const Page: Component = () => {
   const { postId } = useParams();

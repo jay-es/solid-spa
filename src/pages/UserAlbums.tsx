@@ -1,6 +1,6 @@
 import { Link, useParams } from "solid-app-router";
 import { Component, createResource, For } from "solid-js";
-import { fetchUserAlbums } from "~/fetch";
+import { fetchUserAlbums } from "~/api/fetch";
 import styles from "./Index.module.css";
 
 const Page: Component = () => {

@@ -4,8 +4,8 @@ import { fetchUserAlbums } from "~/fetch";
 import styles from "./Index.module.css";
 
 const Page: Component = () => {
-  const params = useParams();
-  const [albums] = createResource(params.userId, fetchUserAlbums);
+  const { userId } = useParams();
+  const [albums] = createResource(userId, fetchUserAlbums);
 
   return (
     <ul>

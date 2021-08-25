@@ -4,8 +4,8 @@ import { fetchUserPosts } from "~/fetch";
 import styles from "./Index.module.css";
 
 const Page: Component = () => {
-  const params = useParams();
-  const [posts] = createResource(params.userId, fetchUserPosts);
+  const { userId } = useParams();
+  const [posts] = createResource(userId, fetchUserPosts);
 
   return (
     <ul>

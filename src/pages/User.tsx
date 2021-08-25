@@ -19,8 +19,8 @@ const ObjectInfo: Component<Record<string, any>> = (object) => (
 );
 
 const Page: Component = () => {
-  const params = useParams();
-  const [user] = createResource(params.userId, fetchUserById);
+  const { userId } = useParams();
+  const [user] = createResource(userId, fetchUserById);
 
   return (
     <>

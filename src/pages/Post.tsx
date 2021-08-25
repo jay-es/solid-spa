@@ -4,9 +4,9 @@ import { fetchCommentsByPostId, fetchPostById } from "~/fetch";
 import styles from "./Index.module.css";
 
 const Page: Component = () => {
-  const params = useParams();
-  const [post] = createResource(params.postId, fetchPostById);
-  const [comments] = createResource(params.postId, fetchCommentsByPostId);
+  const { postId } = useParams();
+  const [post] = createResource(postId, fetchPostById);
+  const [comments] = createResource(postId, fetchCommentsByPostId);
 
   return (
     <>

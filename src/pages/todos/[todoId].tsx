@@ -1,16 +1,16 @@
 import { useParams } from "solid-app-router";
 import { Component, createResource, Show } from "solid-js";
-import { fetchUserById } from "~/api/fetch";
+import { fetchTodoById } from "~/api/fetch";
 import { ObjectInfo } from "~/components/ObjectInfo";
 
 const Page: Component = () => {
-  const { userId } = useParams();
-  const [user] = createResource(userId, fetchUserById);
+  const { todoId } = useParams();
+  const [todo] = createResource(todoId, fetchTodoById);
 
   return (
     <>
-      <Show when={!user.loading}>
-        <ObjectInfo {...user()} />
+      <Show when={!todo.loading}>
+        <ObjectInfo {...todo()} />
       </Show>
     </>
   );

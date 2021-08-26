@@ -5,7 +5,7 @@ import { RouteDefinition, useRoutes } from "solid-app-router";
 const routes: RouteDefinition[] = [
   {
     path: "/",
-    component: lazy(() => import("./pages/Index")),
+    component: lazy(() => import("./pages")),
   },
   {
     path: "/albums",

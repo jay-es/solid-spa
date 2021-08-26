@@ -2,7 +2,7 @@ import { Link } from "solid-app-router";
 import { Component, createResource, For } from "solid-js";
 import { fetchUsers } from "~/api/fetch";
 import { User } from "~/api/types";
-import styles from "./Index.module.css";
+import styles from "./index.module.css";
 
 const UserInfo: Component<User> = (user) => (
   <li class={styles.listItem}>

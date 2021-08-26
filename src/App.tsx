@@ -24,6 +24,10 @@ const routes: RouteDefinition[] = [
     component: lazy(() => import("./pages/posts/[postId]")),
   },
   {
+    path: "/todos",
+    component: lazy(() => import("./pages/todos")),
+  },
+  {
     path: "/users/:userId",
     component: lazy(() => import("./pages/users/[userId]")),
   },
@@ -34,6 +38,10 @@ const routes: RouteDefinition[] = [
   {
     path: "/users/:userId/posts",
     component: lazy(() => import("./pages/users/posts")),
+  },
+  {
+    path: "/users/:userId/todos",
+    component: lazy(() => import("./pages/users/todos")),
   },
 ];
 

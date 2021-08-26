@@ -10,6 +10,7 @@ const UserInfo: Component<User> = (user) => (
     <Link href={`/users/${user.id}`}>user info</Link>,{" "}
     <Link href={`/users/${user.id}/posts`}>posts</Link>,{" "}
     <Link href={`/users/${user.id}/albums`}>albums</Link>,{" "}
+    <Link href={`/users/${user.id}/todos`}>todos</Link>,{" "}
   </li>
 );
 
@@ -23,6 +24,7 @@ const Page: Component = () => {
       </ul>
       <Link href={`/albums`}>all albums</Link>,{" "}
       <Link href={`/posts`}>all posts</Link>,{" "}
+      <Link href={`/todos`}>all todos</Link>,{" "}
     </>
   );
 };

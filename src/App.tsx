@@ -47,6 +47,10 @@ const routes: RouteDefinition[] = [
     path: "/users/:userId/todos",
     component: lazy(() => import("./pages/users/todos")),
   },
+  {
+    path: "/*",
+    element: <p>not found.</p>,
+  },
 ];
 
 const App: Component = () => {

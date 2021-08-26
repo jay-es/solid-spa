@@ -8,8 +8,12 @@ const routes: RouteDefinition[] = [
     component: lazy(() => import("./pages/Index")),
   },
   {
+    path: "/albums",
+    component: lazy(() => import("./pages/albums")),
+  },
+  {
     path: "/albums/:albumId",
-    component: lazy(() => import("./pages/Album")),
+    component: lazy(() => import("./pages/albums/[albumId]")),
   },
   {
     path: "/posts",

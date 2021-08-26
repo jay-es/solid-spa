@@ -21,6 +21,7 @@ const Page: Component = () => {
       <ul>
         <For each={users()}>{(item) => <UserInfo {...item} />}</For>
       </ul>
+      <Link href={`/albums`}>all albums</Link>,{" "}
       <Link href={`/posts`}>all posts</Link>,{" "}
     </>
   );

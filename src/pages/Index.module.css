@@ -9,20 +9,3 @@
 .box b {
   font-weight: 600;
 }
-
-.photo {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-.photoItem {
-  width: 150px;
-}
-.photoItem p {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow-y: hidden;
-  margin-top: 0;
-  height: 2.5em;
-}

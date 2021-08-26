@@ -4,6 +4,9 @@ type Id = number | string;
 const BASE_URL = "https://jsonplaceholder.typicode.com";
 const toJson = (res: Response) => res.json();
 
+export const fetchAlbums = (): Promise<Album[]> =>
+  fetch(`${BASE_URL}/albums`).then(toJson);
+
 export const fetchAlbumById = (albumId: Id): Promise<Album> =>
   fetch(`${BASE_URL}/albums/${albumId}`).then(toJson);
 
@@ -25,8 +28,8 @@ export const fetchUsers = (): Promise<User[]> =>
 export const fetchUserById = (userId: Id): Promise<User> =>
   fetch(`${BASE_URL}/users/${userId}`).then(toJson);
 
-export const fetchUserPosts = (userId: Id): Promise<Post[]> =>
-  fetch(`${BASE_URL}/users/${userId}/posts`).then(toJson);
-
 export const fetchUserAlbums = (userId: Id): Promise<Album[]> =>
   fetch(`${BASE_URL}/users/${userId}/albums`).then(toJson);
+
+export const fetchUserPosts = (userId: Id): Promise<Post[]> =>
+  fetch(`${BASE_URL}/users/${userId}/posts`).then(toJson);

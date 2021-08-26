@@ -1,7 +1,7 @@
 import { useParams } from "solid-app-router";
 import { Component, createResource, For, Show } from "solid-js";
 import { fetchUserById } from "~/api/fetch";
-import styles from "./Index.module.css";
+import styles from "./[useId].module.css";
 
 const isObject = (object: unknown): object is Record<string, unknown> =>
   String(object) === "[object Object]";

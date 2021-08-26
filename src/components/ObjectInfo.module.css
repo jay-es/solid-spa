@@ -1,9 +1,0 @@
-.box {
-  line-height: 1.5;
-}
-.box .box {
-  padding-left: 1em;
-}
-.box b {
-  font-weight: 600;
-}

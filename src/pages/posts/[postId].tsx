@@ -1,7 +1,7 @@
+import { css } from "@emotion/css";
 import { useParams } from "solid-app-router";
 import { Component, createResource, For, Show } from "solid-js";
 import { fetchPostById, fetchPostComments } from "~/api/fetch";
-import styles from "./[postId].module.css";
 
 const Page: Component = () => {
   const { postId } = useParams();
@@ -30,3 +30,13 @@ const Page: Component = () => {
 };
 
 export default Page;
+
+const styles = {
+  commentItem: css`
+    border-top: 1px solid #ddd;
+
+    h4 span {
+      font-weight: 400;
+    }
+  `,
+};

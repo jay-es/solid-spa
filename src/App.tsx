@@ -1,6 +1,6 @@
 import type { Component } from "solid-js";
 import { lazy } from "solid-js";
-import { RouteDefinition, useRoutes } from "solid-app-router";
+import { Link, RouteDefinition, useRoutes } from "solid-app-router";
 
 const routes: RouteDefinition[] = [
   {
@@ -58,7 +58,9 @@ const App: Component = () => {
 
   return (
     <>
-      <h1>Awesome Site</h1>
+      <h1 class="site-title">
+        <Link href="/">Awesome Site</Link>
+      </h1>
       <Routes />
     </>
   );

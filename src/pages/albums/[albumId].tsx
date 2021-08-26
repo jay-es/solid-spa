@@ -1,12 +1,12 @@
 import { useParams } from "solid-app-router";
 import { Component, createResource, For, Show } from "solid-js";
-import { fetchAlbumById, fetchPhotosByAlbumId } from "~/api/fetch";
+import { fetchAlbumById, fetchAlbumPhotos } from "~/api/fetch";
 import styles from "./[albumId].module.css";
 
 const Page: Component = () => {
   const { albumId } = useParams();
   const [album] = createResource(albumId, fetchAlbumById);
-  const [photos] = createResource(albumId, fetchPhotosByAlbumId);
+  const [photos] = createResource(albumId, fetchAlbumPhotos);
 
   return (
     <>

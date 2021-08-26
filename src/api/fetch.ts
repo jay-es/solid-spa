@@ -11,7 +11,7 @@ export const fetchAlbums = (): Promise<Album[]> =>
 export const fetchAlbumById = (albumId: Id): Promise<Album> =>
   fetch(`${BASE_URL}/albums/${albumId}`).then(toJson);
 
-export const fetchPhotosByAlbumId = (albumId: Id): Promise<Photo[]> =>
+export const fetchAlbumPhotos = (albumId: Id): Promise<Photo[]> =>
   fetch(`${BASE_URL}/albums/${albumId}/photos`).then(toJson);
 
 // posts
@@ -21,7 +21,7 @@ export const fetchPosts = (): Promise<Post[]> =>
 export const fetchPostById = (postId: Id): Promise<Post> =>
   fetch(`${BASE_URL}/posts/${postId}`).then(toJson);
 
-export const fetchCommentsByPostId = (postId: Id): Promise<Comment[]> =>
+export const fetchPostComments = (postId: Id): Promise<Comment[]> =>
   fetch(`${BASE_URL}/posts/${postId}/comments`).then(toJson);
 
 // todos

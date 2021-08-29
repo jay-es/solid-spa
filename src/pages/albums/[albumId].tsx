@@ -1,6 +1,6 @@
-import { css } from "@emotion/css";
 import { useParams } from "solid-app-router";
 import { Component, createResource, For, Show } from "solid-js";
+import { css } from "solid-styled-components";
 import { fetchAlbumById, fetchAlbumPhotos } from "~/api/fetch";
 
 const Page: Component = () => {

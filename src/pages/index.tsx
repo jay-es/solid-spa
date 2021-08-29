@@ -1,6 +1,6 @@
-import { css } from "@emotion/css";
 import { Link } from "solid-app-router";
 import { Component, createResource, For } from "solid-js";
+import { css } from "solid-styled-components";
 import { fetchUsers } from "~/api/fetch";
 import { User } from "~/api/types";
 

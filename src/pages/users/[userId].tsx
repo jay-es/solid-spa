@@ -10,7 +10,7 @@ const Page: Component = () => {
   return (
     <>
       <Show when={!user.loading}>
-        <ObjectInfo {...user()} />
+        <ObjectInfo object={user()} />
       </Show>
     </>
   );

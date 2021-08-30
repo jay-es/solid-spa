@@ -1,30 +1,41 @@
 import { Component, For } from "solid-js";
-import { css } from "solid-styled-components";
+import { styled } from "solid-styled-components";
 
 const isObject = (value: unknown): value is Record<string, unknown> =>
   typeof value === "object";
 
-export const ObjectInfo: Component<Record<string, unknown>> = (object) => (
-  <div class={styles.root}>
-    <For each={Object.entries(object)}>
+type Props = {
+  className?: string;
+  object: Record<string, unknown>;
+};
+
+const BaseComponent: Component<Props> = (props) => (
+  <div className={props.className}>
+    <For each={Object.entries(props.object)}>
       {([key, val]) => (
         <div>
-          <b>{key}:</b> {isObject(val) ? <ObjectInfo {...val} /> : String(val)}
+          <b>{key}:</b>{" "}
+          {isObject(val) ? (
+            <BaseComponent object={val} className={props.className} />
+          ) : (
+            String(val)
+          )}
         </div>
       )}
     </For>
   </div>
 );
 
-const styles = {
-  root: css`
-    line-height: 1.5;
+const StyledComponent = styled(BaseComponent)<Props>`
+  line-height: 1.5;
 
-    & & {
-      padding-left: 1em;
-    }
-    b {
-      font-weight: 600;
-    }
-  `,
-};
+  & & {
+    padding-left: 1em;
+  }
+
+  b {
+    font-weight: 600;
+  }
+`;
+
+export const ObjectInfo = StyledComponent;

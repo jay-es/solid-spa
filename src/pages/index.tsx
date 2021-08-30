@@ -1,18 +1,7 @@
 import { Link } from "solid-app-router";
 import { Component, createResource, For } from "solid-js";
-import { css } from "solid-styled-components";
 import { fetchUsers } from "~/api/fetch";
-import { User } from "~/api/types";
-
-const UserInfo: Component<User> = (user) => (
-  <li class={styles.listItem}>
-    {user.id}: {user.name} ({user.username}),{" "}
-    <Link href={`/users/${user.id}`}>user info</Link>,{" "}
-    <Link href={`/users/${user.id}/posts`}>posts</Link>,{" "}
-    <Link href={`/users/${user.id}/albums`}>albums</Link>,{" "}
-    <Link href={`/users/${user.id}/todos`}>todos</Link>,{" "}
-  </li>
-);
+import { UserInfo } from "~/components/UserInfo";
 
 const Page: Component = () => {
   const [users] = createResource(fetchUsers);
@@ -20,7 +9,7 @@ const Page: Component = () => {
   return (
     <>
       <ul>
-        <For each={users()}>{(item) => <UserInfo {...item} />}</For>
+        <For each={users()}>{(item) => <UserInfo user={item} />}</For>
       </ul>
       <Link href={`/albums`}>all albums</Link>,{" "}
       <Link href={`/posts`}>all posts</Link>,{" "}
@@ -30,9 +19,3 @@ const Page: Component = () => {
 };
 
 export default Page;
-
-const styles = {
-  listItem: css`
-    margin: 0.5em 0;
-  `,
-};

@@ -1,7 +1,7 @@
 import { Link } from "solid-app-router";
-import { Component } from "solid-js";
+import type { Component } from "solid-js";
 import { styled } from "solid-styled-components";
-import { User } from "~/api/types";
+import type { User } from "~/api/types";
 
 type Props = {
   className?: string;

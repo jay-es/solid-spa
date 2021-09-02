@@ -1,4 +1,4 @@
-import { Album, Comment, Photo, Post, Todo, User } from "./types";
+import type { Album, Comment, Photo, Post, Todo, User } from "./types";
 
 type Id = number | string;
 const BASE_URL = "https://jsonplaceholder.typicode.com";

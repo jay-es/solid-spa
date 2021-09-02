@@ -1,7 +1,7 @@
 import { Link } from "solid-app-router";
 import { Component, For, Show } from "solid-js";
 import { Dynamic } from "solid-js/web";
-import { Todo } from "~/api/types";
+import type { Todo } from "~/api/types";
 
 type Props = { todos: Todo[]; showId?: boolean };
 

@@ -1,6 +1,6 @@
 import type { Component } from "solid-js";
-import { lazy } from "solid-js";
 import { Link, RouteDefinition, useRoutes } from "solid-app-router";
+import { lazy } from "solid-js";
 
 const routes: RouteDefinition[] = [
   {

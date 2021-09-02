@@ -1,6 +1,6 @@
+import type { Post } from "~/api/types";
 import { Link } from "solid-app-router";
 import { Component, For, Show } from "solid-js";
-import type { Post } from "~/api/types";
 
 type Props = { posts: Post[]; showId?: boolean };
 

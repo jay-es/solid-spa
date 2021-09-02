@@ -1,6 +1,6 @@
+import type { Album } from "~/api/types";
 import { Link } from "solid-app-router";
 import { Component, For, Show } from "solid-js";
-import type { Album } from "~/api/types";
 
 type Props = { albums: Album[]; showId?: boolean };
 

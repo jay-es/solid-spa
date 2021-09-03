@@ -1,7 +1,7 @@
 import { useParams } from "solid-app-router";
-import { Component, createResource, For, Show } from "solid-js";
-import { css } from "solid-styled-components";
+import { Component, createResource, Show } from "solid-js";
 import { fetchPostById, fetchPostComments } from "~/api/fetch";
+import { CommentList } from "~/components/CommentList";
 
 const Page: Component = () => {
   const { postId } = useParams();
@@ -15,28 +15,9 @@ const Page: Component = () => {
         <p>{post().body}</p>
       </Show>
       <h3>Comments</h3>
-      <For each={comments()}>
-        {(item) => (
-          <div class={styles.commentItem}>
-            <h4>
-              {item.name} <span>({item.email})</span>
-            </h4>
-            <p>{item.body}</p>
-          </div>
-        )}
-      </For>
+      <CommentList comments={comments()} />
     </>
   );
 };
 
 export default Page;
-
-const styles = {
-  commentItem: css`
-    border-top: 1px solid #ddd;
-
-    h4 span {
-      font-weight: 400;
-    }
-  `,
-};

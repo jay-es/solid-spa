@@ -1,7 +1,7 @@
 import { useParams } from "solid-app-router";
-import { Component, createResource, For, Show } from "solid-js";
-import { css } from "solid-styled-components";
+import { Component, createResource, Show } from "solid-js";
 import { fetchAlbumById, fetchAlbumPhotos } from "~/api/fetch";
+import { PhotoList } from "~/components/PhotoList";
 
 const Page: Component = () => {
   const { albumId } = useParams();
@@ -13,39 +13,9 @@ const Page: Component = () => {
       <Show when={!album.loading}>
         <h2>{album().title}</h2>
       </Show>
-      <div class={styles.photo}>
-        <For each={photos()}>
-          {(item) => (
-            <div class={styles.photoItem}>
-              <p>{item.title}</p>
-              <img src={item.thumbnailUrl} height="150" />
-            </div>
-          )}
-        </For>
-      </div>
+      <PhotoList photos={photos()} />
     </>
   );
 };
 
 export default Page;
-
-const styles = {
-  photo: css`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-  `,
-
-  photoItem: css`
-    width: 150px;
-
-    p {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      overflow-y: hidden;
-      margin-top: 0;
-      height: 2.5em;
-    }
-  `,
-};

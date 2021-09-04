@@ -22,6 +22,6 @@
   "dependencies": {
     "solid-app-router": "^0.1.4",
     "solid-js": "^1.0.7",
-    "solid-styled-components": "^0.27.2"
+    "solid-styled-components": "^0.27.3"
   }
 }

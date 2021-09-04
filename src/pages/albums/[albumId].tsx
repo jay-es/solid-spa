@@ -11,9 +11,9 @@ const Page: Component = () => {
   return (
     <>
       <Show when={!album.loading}>
-        <h2>{album().title}</h2>
+        <h2>{album()?.title}</h2>
       </Show>
-      <PhotoList photos={photos()} />
+      <PhotoList photos={photos() ?? []} />
     </>
   );
 };

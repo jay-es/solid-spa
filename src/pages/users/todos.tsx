@@ -7,7 +7,7 @@ const Page: Component = () => {
   const { userId } = useParams();
   const [todos] = createResource(userId, fetchUserTodos);
 
-  return <TodoList todos={todos()} />;
+  return <TodoList todos={todos() ?? []} />;
 };
 
 export default Page;

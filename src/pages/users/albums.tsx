@@ -7,7 +7,7 @@ const Page: Component = () => {
   const { userId } = useParams();
   const [albums] = createResource(userId, fetchUserAlbums);
 
-  return <AlbumList albums={albums()} />;
+  return <AlbumList albums={albums() ?? []} />;
 };
 
 export default Page;

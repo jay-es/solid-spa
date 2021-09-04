@@ -5,7 +5,7 @@ import { PostList } from "~/components/PostList";
 const Page: Component = () => {
   const [posts] = createResource(fetchPosts);
 
-  return <PostList posts={posts()} showId={true} />;
+  return <PostList posts={posts() ?? []} showId={true} />;
 };
 
 export default Page;

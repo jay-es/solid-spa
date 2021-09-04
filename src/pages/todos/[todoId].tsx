@@ -10,7 +10,7 @@ const Page: Component = () => {
   return (
     <>
       <Show when={!todo.loading}>
-        <ObjectInfo object={todo()} />
+        <ObjectInfo object={todo() ?? {}} />
       </Show>
     </>
   );

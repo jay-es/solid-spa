@@ -5,7 +5,7 @@ import { AlbumList } from "~/components/AlbumList";
 const Page: Component = () => {
   const [albums] = createResource(fetchAlbums);
 
-  return <AlbumList albums={albums()} showId={true} />;
+  return <AlbumList albums={albums() ?? []} showId={true} />;
 };
 
 export default Page;

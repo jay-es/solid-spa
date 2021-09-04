@@ -7,7 +7,7 @@ const Page: Component = () => {
   const { userId } = useParams();
   const [posts] = createResource(userId, fetchUserPosts);
 
-  return <PostList posts={posts()} />;
+  return <PostList posts={posts() ?? []} />;
 };
 
 export default Page;

@@ -11,11 +11,11 @@ const Page: Component = () => {
   return (
     <>
       <Show when={!post.loading}>
-        <h2>{post().title}</h2>
-        <p>{post().body}</p>
+        <h2>{post()?.title}</h2>
+        <p>{post()?.body}</p>
       </Show>
       <h3>Comments</h3>
-      <CommentList comments={comments()} />
+      <CommentList comments={comments() ?? []} />
     </>
   );
 };

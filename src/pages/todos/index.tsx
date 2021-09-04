@@ -5,7 +5,7 @@ import { TodoList } from "~/components/TodoList";
 const Page: Component = () => {
   const [todos] = createResource(fetchTodos);
 
-  return <TodoList todos={todos()} showId={true} />;
+  return <TodoList todos={todos() ?? []} showId={true} />;
 };
 
 export default Page;

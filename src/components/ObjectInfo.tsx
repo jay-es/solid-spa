@@ -4,19 +4,19 @@ import { styled } from "solid-styled-components";
 const isObject = (value: unknown): value is Record<string, unknown> =>
   typeof value === "object";
 
-type Props = {
+type TemplateProps = {
   className?: string;
   object: Record<string, unknown>;
 };
 
-const BaseComponent: Component<Props> = (props) => (
+const Template: Component<TemplateProps> = (props) => (
   <div className={props.className}>
     <For each={Object.entries(props.object)}>
       {([key, val]) => (
         <div>
           <b>{key}:</b>{" "}
           {isObject(val) ? (
-            <BaseComponent object={val} className={props.className} />
+            <Template object={val} className={props.className} />
           ) : (
             String(val)
           )}
@@ -26,7 +26,7 @@ const BaseComponent: Component<Props> = (props) => (
   </div>
 );
 
-const StyledComponent = styled(BaseComponent)<Props>`
+const StyledComponent = styled(Template)<TemplateProps>`
   line-height: 1.5;
 
   & & {

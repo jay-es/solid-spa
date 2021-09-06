@@ -3,12 +3,12 @@ import type { Comment } from "~/api/types";
 import { For } from "solid-js";
 import { styled } from "solid-styled-components";
 
-type Props = {
+type TemplateProps = {
   className?: string;
   comments: Comment[];
 };
 
-const BaseComponent: Component<Props> = (props) => (
+const Template: Component<TemplateProps> = (props) => (
   <div class={props.className}>
     <For each={props.comments}>
       {(item) => (
@@ -23,7 +23,7 @@ const BaseComponent: Component<Props> = (props) => (
   </div>
 );
 
-const StyledComponent = styled(BaseComponent)<Props>`
+const StyledComponent = styled(Template)<TemplateProps>`
   > .comment-item {
     border-top: 1px solid #ddd;
 

@@ -3,12 +3,12 @@ import type { Photo } from "~/api/types";
 import { For } from "solid-js";
 import { styled } from "solid-styled-components";
 
-type Props = {
+type TemplateProps = {
   className?: string;
   photos: Photo[];
 };
 
-const BaseComponent: Component<Props> = (props) => (
+const Template: Component<TemplateProps> = (props) => (
   <div class={props.className}>
     <For each={props.photos}>
       {(item) => (
@@ -21,7 +21,7 @@ const BaseComponent: Component<Props> = (props) => (
   </div>
 );
 
-const StyledComponent = styled(BaseComponent)<Props>`
+const StyledComponent = styled(Template)<TemplateProps>`
   display: flex;
   flex-wrap: wrap;
   gap: 30px;

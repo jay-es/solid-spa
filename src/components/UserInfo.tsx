@@ -3,12 +3,12 @@ import type { User } from "~/api/types";
 import { Link } from "solid-app-router";
 import { styled } from "solid-styled-components";
 
-type Props = {
+type TemplateProps = {
   className?: string;
   user: User;
 };
 
-const BaseComponent: Component<Props> = (props) => (
+const Template: Component<TemplateProps> = (props) => (
   <li className={props.className}>
     {props.user.id}: {props.user.name} ({props.user.username}),{" "}
     <Link href={`/users/${props.user.id}`}>user info</Link>,{" "}
@@ -18,7 +18,7 @@ const BaseComponent: Component<Props> = (props) => (
   </li>
 );
 
-const StyledComponent = styled(BaseComponent)<Props>`
+const StyledComponent = styled(Template)<TemplateProps>`
   margin: 0.5em 0;
 `;
 
